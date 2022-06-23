@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>vjezba1</title>
+  </head>
+  <body>
+    <p>Click the button and enter number to start countdown</p>
+    <button onclick="getNumber()">Click me</button>
+    <!--<button onclick="countdown()">Start countdown</button>-->
+    <p class="output"></p>
+
+    <script>
+      const output = document.querySelector(".output");
+      output.innerHTML = "";
+      let writeNumber;
+
+      function getNumber() {
+        writeNumber = prompt("Choose number from 1 to 10 to start countdown");
+        countdown();
+      }
+
+      function countdown() {
+        let i = writeNumber;
+        while (i >= 0) {
+          const para = document.createElement("p");
+          if (i === 10) {
+            para.textContent = `Countdown ${i}`;
+          } else if (i === 0) {
+            para.textContent = "Blast off!";
+          } else {
+            para.textContent = i;
+          }
+
+          output.appendChild(para);
+
+          i--;
+        }
+      }
+    </script>
+  </body>
+</html>
