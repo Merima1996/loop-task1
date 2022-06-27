@@ -7,11 +7,14 @@
   <body>
     <p>Click the button and enter number to start countdown</p>
     <button onclick="getNumber()">Click me</button>
-    <!--<button onclick="countdown()">Start countdown</button>-->
-    <p class="output"></p>
+    <div id="parent">
+      <p id="child" class="output"></p>
+    </div>
+    <div id="parent2" class="button2"></div>
 
     <script>
       const output = document.querySelector(".output");
+      const button2 = document.querySelector(".button2");
       output.innerHTML = "";
       let writeNumber;
 
@@ -24,10 +27,13 @@
         let i = writeNumber;
         while (i >= 0) {
           const para = document.createElement("p");
+          const btn = document.createElement("button");
           if (i === 10) {
-            para.textContent = `Countdown ${i}`;
+            para.textContent = ` ${i}`;
           } else if (i === 0) {
             para.textContent = "Blast off!";
+            btn.innerHTML = "Clear";
+            button2.appendChild(btn);
           } else {
             para.textContent = i;
           }
