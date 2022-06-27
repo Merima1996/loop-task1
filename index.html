@@ -8,9 +8,11 @@
     <p>Click the button and enter number to start countdown</p>
     <button onclick="getNumber()">Click me</button>
     <div id="parent">
-      <p id="child" class="output"></p>
+      <div>
+        <p id="child" class="output"></p>
+      </div>
+      <div><p class="button2"></p></div>
     </div>
-    <div id="parent2" class="button2"></div>
 
     <script>
       const output = document.querySelector(".output");
@@ -33,7 +35,10 @@
           } else if (i === 0) {
             para.textContent = "Blast off!";
             btn.innerHTML = "Clear";
+
             button2.appendChild(btn);
+
+            btn.onclick = () => main();
           } else {
             para.textContent = i;
           }
@@ -42,6 +47,19 @@
 
           i--;
         }
+      }
+
+      function one() {
+        alert("You will delete results!");
+      }
+
+      function clearOutput() {
+        document.getElementById("parent").innerHTML = "";
+      }
+
+      function main() {
+        one();
+        clearOutput();
       }
     </script>
   </body>
